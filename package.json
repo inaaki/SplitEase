@@ -1,0 +1,27 @@
+{
+  "name": "SplitEase",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "hono": "^4.13.16"
+  },
+  "devDependencies": {
+    "eslint-plugin-github": "6.1.2",
+    "eslint-plugin-jsdoc": "^65.4.5",
+    "eslint-plugin-sonarjs": "^4.2.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
+    "oxfmt": "^0.75.0",
+    "oxlint": "^1.93.0",
+    "oxlint-tsgolint": "^7.0.2006",
+    "ultracite": "8.2.0",
+    "wrangler": "^4.110.0"
+  }
+}
