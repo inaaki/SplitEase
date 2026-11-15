@@ -1,8 +1,6 @@
 onlyBuiltDependencies:
   - esbuild
-  - workerd
 allowBuilds:
   esbuild: true
-  workerd: true
 minimumReleaseAgeExclude:
   - ultracite@8.2.0

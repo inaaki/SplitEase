@@ -1,11 +1,17 @@
-import { Hono } from "hono";
+import { serve } from "@hono/node-server";
 
-const app = new Hono();
+import app from "./app.js";
+import { env } from "./env.js";
 
-app.get("/health", (c) =>
-  c.json({ status: true, message: "Server is up and running" }, 200)
-);
+const server = serve({ fetch: app.fetch, port: env.APP_PORT }, (info) => {
+  console.info(`Server is running on http://localhost:${info.port}`);
+});
 
-app.notFound((c) => c.json({ status: false, message: "Route not found" }, 404));
+const shutdown = () => {
+  server.close();
+  process.exit(0);
+};
 
-export default app;
+process.on("SIGINT", shutdown);
+
+process.on("SIGTERM", shutdown);
