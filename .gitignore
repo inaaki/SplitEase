@@ -32,3 +32,6 @@ lerna-debug.log*
 .DS_Store
 
 worker-configuration.d.ts
+
+# Vitest reports and artifacts
+.vitest/
